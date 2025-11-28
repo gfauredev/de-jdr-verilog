@@ -1,4 +1,4 @@
-module bornesDVersAffichage(dMin, dMax, bcd0, bcd1, bcd2, en0, en1);
+module ConvertBornesAffichage(dMin, dMax, bcd0, bcd1, bcd2, en0, en1);
 
 input[6:0] dMin, dMax;
 output[3:0] bcd0, bcd1, bcd2;
@@ -8,9 +8,9 @@ reg en0, en1;
 wire[7:0] typeD;
 assign typeD = (dMax + 1) - dMin;
 
-assign bcd0 = typeD / 100; // Centaine
-assign bcd1 = typeD / 10;  // Dizaine
-assign bcd2 = typeD % 10;  // Unité
+assign bcd0 = typeD / 100; // Centaines
+assign bcd1 = typeD / 10;  // Dizaines
+assign bcd2 = typeD % 10;  // Unités
 
 always @(typeD) begin
   if (typeD >= 100) begin

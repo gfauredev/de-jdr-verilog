@@ -1,4 +1,4 @@
-module result(lancer, entropy, dMin, dMax, resultatD);
+module Result(lancer, entropy, dMin, dMax, resultatD);
 
 input lancer;
 input[6:0] entropy; // Nombre "aléatoire" (inconnu au moment du lancer)

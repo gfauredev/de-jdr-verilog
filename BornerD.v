@@ -1,4 +1,4 @@
-module bornerD(idD, dMin, dMax);
+module BornerD(idD, dMin, dMax);
 
 input[2:0] idD;
 

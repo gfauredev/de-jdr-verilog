@@ -1,11 +1,10 @@
-module aff7s(e, enable, s);
+module Aff7Seg(e, enable, s);
 
 input [3:0] e;
 input enable;
 output [6:0] s;
 reg [6:0] s;
 
-// 3. Logique combinatoire directe
 always @(e, enable) begin
   if (enable == 0) begin
     s = 7'b1111111;

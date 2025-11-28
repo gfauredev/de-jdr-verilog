@@ -1,4 +1,4 @@
-module cnt(trig, q);
+module Cnt(trig, q);
 
 parameter BUS_SIZE = 4; // Nombre de bits vecteur sortie
 parameter MODULO = 16;  // Modulo du compteur (si vecteur de sortie assez grand)
