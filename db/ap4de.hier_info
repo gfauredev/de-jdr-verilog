@@ -2,48 +2,48 @@
 CLOCK_50 => CLOCK_50.IN1
 KEY[0] => KEY[0].IN1
 KEY[1] => KEY[1].IN1
-HEX0[0] <= deJdr:de.port6
-HEX0[1] <= deJdr:de.port6
-HEX0[2] <= deJdr:de.port6
-HEX0[3] <= deJdr:de.port6
-HEX0[4] <= deJdr:de.port6
-HEX0[5] <= deJdr:de.port6
-HEX0[6] <= deJdr:de.port6
-HEX1[0] <= deJdr:de.port5
-HEX1[1] <= deJdr:de.port5
-HEX1[2] <= deJdr:de.port5
-HEX1[3] <= deJdr:de.port5
-HEX1[4] <= deJdr:de.port5
-HEX1[5] <= deJdr:de.port5
-HEX1[6] <= deJdr:de.port5
-HEX2[0] <= deJdr:de.port4
-HEX2[1] <= deJdr:de.port4
-HEX2[2] <= deJdr:de.port4
-HEX2[3] <= deJdr:de.port4
-HEX2[4] <= deJdr:de.port4
-HEX2[5] <= deJdr:de.port4
-HEX2[6] <= deJdr:de.port4
-HEX3[0] <= deJdr:de.port3
-HEX3[1] <= deJdr:de.port3
-HEX3[2] <= deJdr:de.port3
-HEX3[3] <= deJdr:de.port3
-HEX3[4] <= deJdr:de.port3
-HEX3[5] <= deJdr:de.port3
-HEX3[6] <= deJdr:de.port3
-HEX4[0] <= deJdr:de.port8
-HEX4[1] <= deJdr:de.port8
-HEX4[2] <= deJdr:de.port8
-HEX4[3] <= deJdr:de.port8
-HEX4[4] <= deJdr:de.port8
-HEX4[5] <= deJdr:de.port8
-HEX4[6] <= deJdr:de.port8
-HEX5[0] <= deJdr:de.port7
-HEX5[1] <= deJdr:de.port7
-HEX5[2] <= deJdr:de.port7
-HEX5[3] <= deJdr:de.port7
-HEX5[4] <= deJdr:de.port7
-HEX5[5] <= deJdr:de.port7
-HEX5[6] <= deJdr:de.port7
+HEX0[0] << deJdr:de.port6
+HEX0[1] << deJdr:de.port6
+HEX0[2] << deJdr:de.port6
+HEX0[3] << deJdr:de.port6
+HEX0[4] << deJdr:de.port6
+HEX0[5] << deJdr:de.port6
+HEX0[6] << deJdr:de.port6
+HEX1[0] << deJdr:de.port5
+HEX1[1] << deJdr:de.port5
+HEX1[2] << deJdr:de.port5
+HEX1[3] << deJdr:de.port5
+HEX1[4] << deJdr:de.port5
+HEX1[5] << deJdr:de.port5
+HEX1[6] << deJdr:de.port5
+HEX2[0] << deJdr:de.port4
+HEX2[1] << deJdr:de.port4
+HEX2[2] << deJdr:de.port4
+HEX2[3] << deJdr:de.port4
+HEX2[4] << deJdr:de.port4
+HEX2[5] << deJdr:de.port4
+HEX2[6] << deJdr:de.port4
+HEX3[0] << deJdr:de.port3
+HEX3[1] << deJdr:de.port3
+HEX3[2] << deJdr:de.port3
+HEX3[3] << deJdr:de.port3
+HEX3[4] << deJdr:de.port3
+HEX3[5] << deJdr:de.port3
+HEX3[6] << deJdr:de.port3
+HEX4[0] << deJdr:de.port8
+HEX4[1] << deJdr:de.port8
+HEX4[2] << deJdr:de.port8
+HEX4[3] << deJdr:de.port8
+HEX4[4] << deJdr:de.port8
+HEX4[5] << deJdr:de.port8
+HEX4[6] << deJdr:de.port8
+HEX5[0] << deJdr:de.port7
+HEX5[1] << deJdr:de.port7
+HEX5[2] << deJdr:de.port7
+HEX5[3] << deJdr:de.port7
+HEX5[4] << deJdr:de.port7
+HEX5[5] << deJdr:de.port7
+HEX5[6] << deJdr:de.port7
 
 
 |implementationDe2115|deJdr:de
@@ -370,7 +370,13 @@ q[6] <= q[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |implementationDe2115|deJdr:de|lancerD:lancement|result:res
-lancer => ~NO_FANOUT~
+lancer => resultatD[0]~reg0.CLK
+lancer => resultatD[1]~reg0.CLK
+lancer => resultatD[2]~reg0.CLK
+lancer => resultatD[3]~reg0.CLK
+lancer => resultatD[4]~reg0.CLK
+lancer => resultatD[5]~reg0.CLK
+lancer => resultatD[6]~reg0.CLK
 entropy[0] => Add0.IN7
 entropy[1] => Add0.IN6
 entropy[2] => Add0.IN5
@@ -392,13 +398,13 @@ dMax[3] => Mod0.IN10
 dMax[4] => Mod0.IN9
 dMax[5] => Mod0.IN8
 dMax[6] => Mod0.IN7
-resultatD[0] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
-resultatD[1] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
-resultatD[2] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
-resultatD[3] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
-resultatD[4] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
-resultatD[5] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
-resultatD[6] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+resultatD[0] <= resultatD[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+resultatD[1] <= resultatD[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+resultatD[2] <= resultatD[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+resultatD[3] <= resultatD[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+resultatD[4] <= resultatD[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+resultatD[5] <= resultatD[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+resultatD[6] <= resultatD[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |implementationDe2115|deJdr:de|lancerD:lancement|affichageResult:aff
