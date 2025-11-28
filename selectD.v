@@ -7,7 +7,7 @@ output[6:0] hex0, hex1, hex2, hex3;
 wire[2:0] idD;
 wire en0, en1;
 
-cnt #(3, 8)cntTypeD(suivant, idD);
+cnt #(3, 8, 0)cntTypeD(suivant, idD);
 bornerD borner(idD, dMin, dMax);
 bornesDVersAffichage calcAff(dMin, dMax, bcd0, bcd1, bcd2, en0, en1);
 affichageType aff(bcd0, bcd1, bcd2, en0, en1, hex0, hex1, hex2, hex3);

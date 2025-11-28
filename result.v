@@ -9,7 +9,7 @@ reg[6:0] resultatD;
 
 initial resultatD <= 0;
 
-always @(lancer) begin
+always @(negedge lancer) begin
   resultatD <= (entropy + dMin) % dMax;
 end
 
