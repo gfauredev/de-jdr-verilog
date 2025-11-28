@@ -5,11 +5,12 @@ input enable;
 output [6:0] s;
 reg [6:0] s;
 
+initial s = 7'b1111111;
+
 always @(e, enable) begin
   if (enable == 0) begin
     s = 7'b1111111;
-  end
-  else begin
+  end else begin
     case (e)
       0: s = 7'b1000000;
       1: s = 7'b1111001;
@@ -27,7 +28,7 @@ always @(e, enable) begin
       13: s = 7'b0100001;
       14: s = 7'b0000110;
       15: s = 7'b0001110;
-      default: s = 7'b1111111;
+      default: s = 7'b1111111; // Sécurité (e <= 15)
     endcase
   end
 end

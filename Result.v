@@ -1,16 +1,16 @@
-module Result(lancer, entropy, dMin, dMax, resultatD);
+module Result(lancer, entropie, min_de, max_de, resultat);
 
 input lancer;
-input[6:0] entropy; // Nombre "aléatoire" (inconnu au moment du lancer)
-input[6:0] dMin, dMax;
+input[6:0] entropie; // Nombre "aléatoire" (inconnu au moment du lancer)
+input[6:0] min_de, max_de;
 
-output[6:0] resultatD;
-reg[6:0] resultatD;
+output[6:0] resultat;
+reg[6:0] resultat;
 
-initial resultatD <= 0;
+initial resultat <= 0;
 
 always @(negedge lancer) begin
-  resultatD <= (entropy + dMin) % dMax;
+  resultat <= (entropie + min_de) % max_de;
 end
 
 endmodule

@@ -1,12 +1,12 @@
-module ConvertBornesAffichage(dMin, dMax, bcd0, bcd1, bcd2, en0, en1);
+module ConvertBornesAffichage(min_de, max_de, bcd0, bcd1, bcd2, en0, en1);
 
-input[6:0] dMin, dMax;
+input[6:0] min_de, max_de;
 output[3:0] bcd0, bcd1, bcd2;
 output en0, en1;
 reg en0, en1;
 
 wire[7:0] typeD;
-assign typeD = (dMax + 1) - dMin;
+assign typeD = (max_de + 1) - min_de;
 
 assign bcd0 = typeD / 100; // Centaines
 assign bcd1 = typeD / 10;  // Dizaines
