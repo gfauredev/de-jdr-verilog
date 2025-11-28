@@ -5,6 +5,7 @@ output[6:0] min_de, faces_de;
 output[6:0] hex_d, hex100, hex10, hex1;
 
 wire[2:0] id_de;
+wire[3:0] bcd100, bcd10, bcd1;
 wire en100, en10;
 
 Cnt #(3, 8, 0)cntTypeD(suivant, id_de);
